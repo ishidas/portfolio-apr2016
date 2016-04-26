@@ -5,7 +5,9 @@ const eslint = require('gulp-eslint');
 const mocha = require('gulp-mocha');
 const paths = ['*.js', 'test/*.js', 'app/*.js', 'app/templates/*.js', '/app/**/*.html'];
 const webpack = require('webpack-stream');
-
+const sass = require('gulp-sass');
+const maps = require('gulp-sourcemaps');
+const minifyCSS = require('gulp-minify-css');
 const source = {
   html: __dirname + '/app/**/*.html',
   js: __dirname + '/app/index.js',
@@ -13,6 +15,14 @@ const source = {
   directive: __dirname + '/app/*.js'
 };
 
+gulp.task('sassy:dev', ()=>{
+  gulp.src(__dirname + '/app/sass/*.scss')
+    .pipe(maps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(minifyCSS())
+    .pipe(maps.write('./'))
+    .pipe(gulp.dest('./build/css/'));
+});
 
 gulp.task('copy', ()=>{
   return gulp.src(source.html)
@@ -28,7 +38,7 @@ gulp.task('bundle:test', ()=>{
       },
       module: {
         loaders: [
-          {test:  /\.css$/, loader: 'style!css'}
+          {test:  /\.scss$/, loaders: ['style', 'css', 'sass']}
         ]
       }
     }))
@@ -44,7 +54,7 @@ gulp.task('bundle:dev', function(){
     },
     module: {
       loaders: [
-        {test:  /\.css$/, loader: 'style!css'}
+        {test:  /\.scss$/, loaders: ['style', 'css', 'sass']}
       ]
     }
   }))

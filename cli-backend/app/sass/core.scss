@@ -1,0 +1,12 @@
+$base-width: 400px;
+$base-height: 400px;
+$shadow-color: transparentize(black, 0.5);
+$href-color: green;
+$border-color: #333333;
+
+.block {
+  width: $base-width;
+  height: $base-height;
+  box-shadow: 0 0 20px $shadow-color;
+  border: 1px solid $border-color;
+}
