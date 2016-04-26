@@ -1,12 +1,24 @@
-$base-width: 400px;
-$base-height: 400px;
+$base-width: 80%;
+$base-height: 100%;
+$base-padding: 10%;
 $shadow-color: transparentize(black, 0.5);
 $href-color: green;
 $border-color: #333333;
+$header-color: #65524D;
+$maybe-color: #817E9F;
+$maybe2-color: #7FC29B;
+$maybe3-color: #B5EF8A;
+$maybe4-color: #D7F171;
+
+body {
+  background-image: url('./img/dad-bg-a.png');
+}
 
 .block {
   width: $base-width;
   height: $base-height;
   box-shadow: 0 0 20px $shadow-color;
   border: 1px solid $border-color;
+  padding: $base-padding;
+  background-color: $header-color;
 }
