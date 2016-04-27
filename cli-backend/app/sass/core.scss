@@ -41,6 +41,28 @@ body {
   }
 }
 
+#fold {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 3em solid transparent;
+  border-bottom: 3em solid rgba(255, 233, 191, 0.30);
+  box-shadow: -15px 0px 10px $shadow-color;
+}
+
+#pen {
+  position: absolute;
+  right: -20%;
+  width: 1.5em;
+  height: 15em;
+  background-color: green;
+  border-bottom-right-radius: 5%;
+  border-bottom-left-radius: 5%;
+  -webkit-transform: rotate(-10deg);
+}
+
 ul {
   position: relative;
   max-width: inherit;
