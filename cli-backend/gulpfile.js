@@ -3,7 +3,7 @@
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const mocha = require('gulp-mocha');
-const paths = ['*.js', 'test/*.js', 'app/*.js', 'app/templates/*.js', '/app/**/*.html'];
+const paths = ['*.js', 'test/*.js', 'app/*.js', 'app/templates/*.js', 'app/**/*.html', 'app/**/*.scss'];
 const webpack = require('webpack-stream');
 const sass = require('gulp-sass');
 const maps = require('gulp-sourcemaps');
@@ -88,5 +88,5 @@ gulp.task('test', function(){
 });
 
 gulp.task('watcher', function(){
-  gulp.watch( paths, ['copy', 'bundle:dev']);
+  gulp.watch( paths, ['bundle:dev','sassy:dev']);
 });
