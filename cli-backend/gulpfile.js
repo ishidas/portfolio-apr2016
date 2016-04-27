@@ -8,12 +8,26 @@ const webpack = require('webpack-stream');
 const sass = require('gulp-sass');
 const maps = require('gulp-sourcemaps');
 const minifyCSS = require('gulp-minify-css');
+const urlAdjuster = require('gulp-css-url-adjuster');
 const source = {
   html: __dirname + '/app/**/*.html',
   js: __dirname + '/app/index.js',
   test: __dirname + '/test/*_spec.js',
-  directive: __dirname + '/app/*.js'
+  directive: __dirname + '/app/*.js',
+  sass: __dirname + '/app/**/*.scss'
 };
+
+gulp.task('imgUrl', ()=>{
+  return gulp.src(source.sass)
+  .pipe(urlAdjuster({
+    prependRelative: '/img/',
+    append: '?version=1',
+    output: {
+      filename: 'modifiedStyle.scss'
+    }
+  }))
+  .pipe(gulp.dest('./app/'));
+});
 
 gulp.task('sassy:dev', ()=>{
   gulp.src(__dirname + '/app/sass/*.scss')
@@ -53,11 +67,9 @@ gulp.task('bundle:dev', function(){
       filename: 'bundle.js'
     },
     module: {
-      loaders: [
-        {test:  /\.scss$/, loaders: ['style', 'css', 'sass']},
-        {test: /\.(jpe?g|png|gif|svg)$/i, loaders: ['file?hash=sha512&digest=hex&name=[hash].[ext]',
-            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-        ]}
+      loaders: [{test: /\.(png|jpg|gif)$/,
+          loader: 'file-loader?name=img/img-[hash:6].[ext]'},
+        { test: /\.css$/, loader: 'style!css' }
       ]
     }
   }))
