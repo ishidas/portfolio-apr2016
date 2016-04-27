@@ -6,29 +6,42 @@ $shadow-color: transparentize(black, 0.5);
 $href-color: green;
 $border-color: #333333;
 $header-color: rgba(101, 82, 77, 0.70);
-$maybe-color: #817E9F;
-$maybe2-color: #7FC29B;
-$maybe3-color: #B5EF8A;
-$maybe4-color: #D7F171;
+$background-green-color: #163a3a;
+$background-darkblue-color: #051f2d;
+$block-background: rgba(255, 255, 255, 0.55);
+$block-background-creme: rgba(255, 233, 191, 0.75);
+$base-font-google: 'Bad Script', 'cursive';
+$base-font-google2: 'La BelleAurore', 'cursive';
+$base-font-size: 1.2em;
+$block-width: 9em;
+$block-height: 25%;
+
+html {
+  width: 100%;
+
+}
 
 body {
-  background-image: url("./img/dadshirt-bg-a.png");
+  background-image: url("./img/dadshirt-bg-3.png");
   background-attachment: fixed;
+  font-family: $base-font-google2;
+  font-size: $base-font-size;
 }
 
 .block {
-  width: $base-width;
-  height: $base-height;
-  // box-shadow: 0 0 20px $shadow-color;
+  position: absolute;
+  max-width: $block-width;
+  height: $block-height;
+  box-shadow: 10px 10px 20px $shadow-color;
   padding: $base-padding;
-  margin: $base-margin;
-  background-color: $header-color;
-  &:hovor {
-    background-color: $maybe-color;
-  }
+  margin: 0;
+  background-color: $block-background-creme;
+
 }
 
 ul {
+  position: relative;
+  max-width: inherit;
   margin: 0;
   padding: 0;
 }
@@ -36,5 +49,28 @@ ul {
 li {
   display: inline-block;
   list-style: none;
-  padding: $base-padding 22.5%;
+  padding: $base-padding 20%;
+  margin: 0 10%;
+  // border-radius: 50%;
+  // border: 1px red solid;
+}
+
+#pin {
+  position: absolute;
+  width: 1em;
+  box-shadow: 10px 10px 10px $shadow-color;
+  margin: 0;
+  height: 1em;
+  top: 10%;
+  left: 10%;
+  background-color: yellow;
+  border-radius: 50%;
+  z-index: 555;
+}
+
+.book-cover {
+  display: inline-block;
+  max-width: $base-width;
+  height: 5em;
+  // background-color: ;
 }
