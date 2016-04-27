@@ -14,11 +14,27 @@
         <div id="pin"></div>
         <my-nav-bar></my-nav-bar>
       </section>
-      <section class="book-cover">
-
+      <section class="book-cover" id="flipbook">
+        <div class="hard">Turning Page?</div>
+        <div class="hard"></div>
+        <div class="sheet" id="page1">This is page 1. Is it turning your page?</div>
+        <div class="sheet" id="page2">This is page 2. I think it is turning your page.</div>
+        <div class="sheet" id="page3">This is page 3. I want to make this page corner look like an actual papaer.</div>
+        <div class="sheet" id="page4">This is page 4. How do I do that??</div>
+        <div class="hard"></div>
+        <div class="hard"></div>
       </section>
     </main>
-
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    <script src="./lib/turn.html4.js" type="text/javascript"></script>
     <script src="./bundle.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $("#flipbook").turn({
+        width: 400,
+        height: 300,
+        autoCenter: true
+      });
+    </script>
+
   </body>
 </html>

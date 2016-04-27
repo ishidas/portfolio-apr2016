@@ -69,8 +69,35 @@ li {
 }
 
 .book-cover {
+  position: absolute;
+  left: 50%;
   display: inline-block;
-  max-width: $base-width;
-  height: 5em;
-  // background-color: ;
+  max-width: 25em;
+  height: 8em;
+  border: 1px solid black;
+  // padding: 20%;
+  background-color: $block-background;
+}
+
+// .sheet {
+//   background-color: blue;
+// }
+#page1 {
+  width: inherit;
+  background-color: red;
+}
+
+#page2 {
+  width: inherit;
+  background-color: blue;
+}
+
+#page3 {
+  width: inherit;
+  background-color: green;
+}
+
+#page4 {
+  width: inherit;
+  background-color: yellow;
 }
