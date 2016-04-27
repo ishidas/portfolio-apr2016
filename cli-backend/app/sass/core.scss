@@ -36,7 +36,9 @@ body {
   padding: $base-padding;
   margin: 0;
   background-color: $block-background-creme;
-
+  &:hover {
+    background-color: blue;
+  }
 }
 
 ul {
@@ -76,28 +78,35 @@ li {
   height: 8em;
   border: 1px solid black;
   // padding: 20%;
-  background-color: $block-background;
+  background-color: blue;
+  box-shadow: 10px 10px 20px $shadow-color;
 }
 
-// .sheet {
-//   background-color: blue;
-// }
+.hard {
+  background-color: pink;
+  box-shadow: 10px 10px 20px $shadow-color;
+}
+
 #page1 {
   width: inherit;
   background-color: red;
+  box-shadow: 10px 10px 20px $shadow-color;
 }
 
 #page2 {
   width: inherit;
   background-color: blue;
+  box-shadow: 10px 10px 20px $shadow-color;
 }
 
 #page3 {
   width: inherit;
   background-color: green;
+  box-shadow: 10px 10px 20px $shadow-color;
 }
 
 #page4 {
   width: inherit;
   background-color: yellow;
+  box-shadow: 10px 10px 20px $shadow-color;
 }

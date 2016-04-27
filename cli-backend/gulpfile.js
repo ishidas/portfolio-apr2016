@@ -8,25 +8,20 @@ const webpack = require('webpack-stream');
 const sass = require('gulp-sass');
 const maps = require('gulp-sourcemaps');
 const minifyCSS = require('gulp-minify-css');
-const urlAdjuster = require('gulp-css-url-adjuster');
+// const urlAdjuster = require('gulp-css-url-adjuster');
 const source = {
   html: __dirname + '/app/**/*.html',
   js: __dirname + '/app/index.js',
   test: __dirname + '/test/*_spec.js',
   directive: __dirname + '/app/*.js',
-  sass: __dirname + '/app/**/*.scss'
+  sass: __dirname + '/app/**/*.scss',
+  img: __dirname + '/app/**/*.png',
+  turner: __dirname + '/app/lib/*'
 };
 
-gulp.task('imgUrl', ()=>{
-  return gulp.src(source.sass)
-  .pipe(urlAdjuster({
-    prependRelative: '/img/',
-    append: '?version=1',
-    output: {
-      filename: 'modifiedStyle.scss'
-    }
-  }))
-  .pipe(gulp.dest('./app/'));
+gulp.task('copy-turner', ()=>{
+  return gulp.src(source.turner)
+    .pipe(gulp.dest('./build/lib/'));
 });
 
 gulp.task('sassy:dev', ()=>{
@@ -38,8 +33,13 @@ gulp.task('sassy:dev', ()=>{
     .pipe(gulp.dest('./build/css/'));
 });
 
+gulp.task('img', ()=>{
+  return gulp.src(source.img)
+    .pipe(gulp.dest('./build/css/'));
+});
+
 gulp.task('copy', ()=>{
-  return gulp.src(source.html)
+  return gulp.src([source.html,source.img])
     .pipe(gulp.dest('./build'));
 });
 
@@ -90,3 +90,5 @@ gulp.task('test', function(){
 gulp.task('watcher', function(){
   gulp.watch( paths, ['bundle:dev','sassy:dev']);
 });
+
+gulp.task('default', ['copy-turner', 'copy', 'sassy:dev', 'bundle:dev','img']);
