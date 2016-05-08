@@ -46,7 +46,6 @@ gulp.task('copy', ()=>{
 gulp.task('bundle:test', ()=>{
   return gulp.src(source.test)
     .pipe(webpack({
-      watch: true,
       output: {
         filename: 'test_bundle.js'
       },
@@ -62,7 +61,6 @@ gulp.task('bundle:test', ()=>{
 gulp.task('bundle:dev', function(){
   return gulp.src(source.directive)
   .pipe(webpack({
-    watch: true,
     output: {
       filename: 'bundle.js'
     },

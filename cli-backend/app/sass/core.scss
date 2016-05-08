@@ -22,113 +22,59 @@ html {
 }
 
 body {
-  background-image: url("./img/dadshirt-bg-3.png");
   background-attachment: fixed;
   font-family: $base-font-google2;
   font-size: $base-font-size;
+
 }
 
-.block {
-  position: absolute;
-  max-width: $block-width;
-  height: $block-height;
-  box-shadow: 10px 10px 20px $shadow-color;
-  padding: $base-padding;
-  margin: 0;
-  background-color: $block-background-creme;
-  &:hover {
-    background-color: blue;
-  }
+header {
+  position: fixed;
+  width: 100%;
 }
 
-#fold {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-left: 3em solid transparent;
-  border-bottom: 3em solid rgba(255, 233, 191, 0.30);
-  box-shadow: -15px 0px 10px $shadow-color;
+header h2 {
+  display: inline-block;
+  padding: 5%;
 }
 
-#pen {
-  position: absolute;
-  right: -20%;
-  width: 1.5em;
-  height: 15em;
-  background-color: green;
-  border-bottom-right-radius: 5%;
-  border-bottom-left-radius: 5%;
-  -webkit-transform: rotate(-10deg);
+header span,  {
+  display: inline-block;
+  padding: 0 5%;
 }
 
-ul {
-  position: relative;
-  max-width: inherit;
-  margin: 0;
-  padding: 0;
+nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 10em;
 }
 
-li {
+nav ul {
+  width: 100%;
+  padding: 0 10%;
+}
+
+nav ul li {
   display: inline-block;
   list-style: none;
-  padding: $base-padding 20%;
-  margin: 0 10%;
-  // border-radius: 50%;
-  // border: 1px red solid;
+  width: 12em;
+  height: 12em;
+  margin: 2.5% 12.5%;
+  outline: 2px red solid;
 }
 
-#pin {
-  position: absolute;
-  width: 1em;
-  box-shadow: 10px 10px 10px $shadow-color;
-  margin: 0;
-  height: 1em;
-  top: 10%;
-  left: 10%;
-  background-color: yellow;
-  border-radius: 50%;
-  z-index: 555;
+footer {
+  width: 100%;
 }
 
-.book-cover {
-  position: absolute;
-  left: 50%;
+footer ul {
+  width: 100%;
+  padding: 10% 20%;
+}
+
+footer ul li {
   display: inline-block;
-  max-width: 25em;
-  height: 8em;
-  border: 1px solid black;
-  // padding: 20%;
-  background-color: blue;
-  box-shadow: 10px 10px 20px $shadow-color;
-}
+  list-style: none;
 
-.hard {
-  background-color: pink;
-  box-shadow: 10px 10px 20px $shadow-color;
-}
-
-#page1 {
-  width: inherit;
-  background-color: red;
-  box-shadow: 10px 10px 20px $shadow-color;
-}
-
-#page2 {
-  width: inherit;
-  background-color: blue;
-  box-shadow: 10px 10px 20px $shadow-color;
-}
-
-#page3 {
-  width: inherit;
-  background-color: green;
-  box-shadow: 10px 10px 20px $shadow-color;
-}
-
-#page4 {
-  width: inherit;
-  background-color: yellow;
-  box-shadow: 10px 10px 20px $shadow-color;
 }
