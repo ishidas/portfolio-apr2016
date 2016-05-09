@@ -5,12 +5,28 @@ require('angular-route');
 const app = angular.module('myApp',['ngRoute']);
 
 require(__dirname + '/directives/directives.js')(app);
+require(__dirname + '/controllers/github-ctrl.js')(app);
 
-
-
+//route providers
 app.config(['$routeProvider', function($routeProvider){
   $routeProvider
     .when('/', {
       templateUrl: './templates/home.html'
+    })
+    .when('/home', {
+      templateUrl: './templates/home.html'
+    })
+    .when('/projects', {
+      templateUrl: 'templates/github-view.html',
+      controller: 'GithubController'
+    })
+    .when('/about', {
+      templateUrl: 'templates/about-view.html'
+    })
+    .when('/blog', {
+      templateUrl: 'templates/blog-view.html'
+    })
+    .when('/animations', {
+      templateUrl: 'templates/animations-view.html'
     });
 }]);
