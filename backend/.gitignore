@@ -2,3 +2,4 @@
 .eslintrc.json
 build
 node_modules
+db
