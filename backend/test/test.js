@@ -2,7 +2,7 @@
 var chai = require('chai');
 var chaiHTTP = require('chai-http');
 var mongoose = require('mongoose');
-require(__dirname + '/../server.js');
+var server = require(__dirname + '/../server.js');
 
 chai.use(chaiHTTP);
 var request = chai.request;
@@ -16,7 +16,7 @@ describe('CRUD integration test', ()=>{
   });
 
   it('should be POSTing a new article', (done)=>{
-    request('localhost:3000')
+    server.request('localhost:3000')
     .post('/admin/blog')
     .send({'title': 'new title', 'body': 'new body'})
     .end((err,res)=>{
@@ -26,5 +26,25 @@ describe('CRUD integration test', ()=>{
       done();
     });
   });//end of it block
+
+  it('should GET all data', (done)=>{
+    request('localhost:3000')
+    .get('/blog/articles')
+    .end((err, res)=>{
+      expect(err).to.be.null;
+      expect(res.body).to.be.an('Array');
+      expect(res.body[0]).to.have.property('title', 'new title');
+      expect(res.body[0]).to.have.property('body', 'new body');
+      done();
+    });
+  });//end of it block
+
+  // it('should GET only one by id', (done)=>{
+  //   request('localhost:3000')
+  //   .get('/blog/articles/' + id)
+  //   .end((err, res)=>{
+  //
+  //   });
+  // });//end of it block
 
 });//end of describe block
