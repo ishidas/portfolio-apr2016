@@ -1,0 +1,18 @@
+<section class="sec-container" ng-controller="GithubController as githubCtrl" ng-cloak>
+  <h3>Sawako Ishida Github Repo</h3>
+  <p>User Name : {{githuthubCtrl.repoData.login}}</p>
+  <img ng-src="{{githubCtrl.repoData.avatar_url}}" alt="Sawako's Github avatar image" />
+  <ul>
+    <li>Public Repos: {{githubCtrl.repoData.public_repos}}</li>
+    <li>Followers: {{githubCtrl.repoData.followers}}</li>
+    <li>Follwoing: {{githubCtrl.repoData.following}}</li>
+  </ul>
+  <section>
+    <input ng-click="githubCtrl.getRepoLinks()" type="button" value="See ALl My Repo Links">
+    <div id="repeater" ng-repeat="repo in githubCtrl.repoLinks">
+      <h3>Repo Name : {{repo.name}}</h3>
+      <span>Link : <a ng-href="{{repo.url}}">{{repo.url}}</a></span>
+      <p>Created at : {{repo.created_at}}</p>
+    </div>
+  </section>
+</section>

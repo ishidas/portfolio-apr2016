@@ -12,9 +12,12 @@ $block-background: rgba(255, 255, 255, 0.55);
 $block-background-creme: rgba(255, 233, 191, 0.75);
 $base-font-google: 'Bad Script', 'cursive';
 $base-font-google2: 'La BelleAurore', 'cursive';
+$base-font-google3: 'Quicksand', 'sans-serif';
 $base-font-size: 1.2em;
 $block-width: 9em;
 $block-height: 25%;
+$footer-color: rgb(128,123,135);
+$footer-color2: rgb(239,235,233);
 
 html {
   width: 100%;
@@ -23,14 +26,17 @@ html {
 
 body {
   background-attachment: fixed;
-  font-family: $base-font-google2;
+  font-family: $base-font-google3;
   font-size: $base-font-size;
 
 }
 
 header {
   position: fixed;
+  display: inline-block;
   width: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  color: white;
 }
 
 header h2 {
@@ -47,7 +53,6 @@ nav {
   width: 100%;
   display: flex;
   flex-direction: row;
-  padding-top: 10em;
 }
 
 nav ul {
@@ -60,21 +65,47 @@ nav ul li {
   list-style: none;
   width: 12em;
   height: 12em;
-  margin: 2.5% 12.5%;
-  outline: 2px red solid;
+  background-color: rgb(0,153,255);
+  color: white;
+  margin: 5%;
+  border: 2em solid rgb(204,255,255);
+
+  // outline: 2px red solid;
+}
+
+a {
+  color: white;
+}
+
+ body main {
+  display: inline-block;
+  padding: 10em 10%;
+  width: 80%;
+}
+
+.sec-container {
+  display: inline-block;
+  width: 100%;
+}
+
+#repeater:nth-child(even) {
+  width: 100%;
+  background: rgb(239,235,233);
 }
 
 footer {
   width: 100%;
+  background-color: $footer-color;
+  font-family: $base-font-google3;
 }
 
 footer ul {
-  width: 100%;
+  width: 60%;
   padding: 10% 20%;
 }
 
 footer ul li {
   display: inline-block;
   list-style: none;
-
+  padding: 0 10%;
 }
