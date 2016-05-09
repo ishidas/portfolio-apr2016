@@ -6,12 +6,20 @@ const mongoose = require('mongoose');
 
 //db set up
 const PORT = process.env.MONGO_URI || 'mongodb://localhost/db';
-mongoose.connect('mongodb://localhost/db');
+const test = 'mongodb://localhost/test';
+mongoose.connect(test);
 let models = {};
 require(__dirname + '/models/blog-model.js')(mongoose, models);
 
 //routers
 app.use(bodyParser.json());
+
+app.use((req, res, next)=>{
+  res.header('Access-Control-Allow-Origin','http://localhost:8080');
+  res.header('Access-Control-Allow-Headers','Content-Type');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE');
+  next();
+});
 
 app.get('/blog/articles', (req, res)=>{
   models.Blog.find({},(err, blog)=>{
@@ -45,7 +53,7 @@ app.put('/admin/blog/article/:id', (req, res)=>{
 app.delete('/admin/blog/article/:id', (req, res)=>{
   models.Blog.findOneAndRemove({_id: req.params.id}, (err)=>{
     if(err) return res.json({error: err});
-    res.json({msg: 'success!'});
+    res.json({msg: 'Success!'});
   });
 });
 
