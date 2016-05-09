@@ -51,4 +51,27 @@ describe('CRUD integration test', ()=>{
     });
   });//end of it block
 
+  it('should take care of PUT request', (done)=>{
+    request('localhost:3000')
+    .put('/admin/blog/article/' + id)
+    .send({'title': 'new title edited'})
+    .end((err, res)=>{
+      expect(err).to.be.null;
+      expect(res.body).to.have.property('title', 'new title edited');
+      expect(res.body._id).to.eql(id);
+      done();
+    });
+  });//end of it block
+
+  it('should delete a specified id data set', (done)=>{
+    request('localhost:3000')
+    .delete('/admin/blog/article/' + id)
+    .end((err, res)=>{
+      expect(err).to.be.null;
+      expect(res.body).to.be.an('Object');
+      expect(res.body).to.have.property('msg', 'Success!');
+      done();
+    });
+  });//end of it block
+
 });//end of describe block
