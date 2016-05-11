@@ -6,9 +6,11 @@ const mongoose = require('mongoose');
 
 //db set up
 // const PORT = process.env.MONGO_PORT || 3000;
-const DB = process.env.MONGO_PORT || 'mongodb://localhost/db';
+// const DB = process.env.MONGO_URI || 'mongodb://localhost/db';
 // const test = 'mongodb://localhost/db';
-mongoose.connect(DB);
+mongoose.connect(process.env.MONGO_URI);
+mongoose.set('debug', true);
+console.log(process.env.MONGO_URI);
 let models = {};
 require(__dirname + '/models/blog-model.js')(mongoose, models);
 
@@ -37,7 +39,7 @@ app.get('/blog/articles/:id', (req, res)=>{
 });
 
 app.post('/admin/blog', (req, res)=>{
-  console.log('rea.body : ' + JSON.stringify(req.body))
+  console.log('rea.body : ' + JSON.stringify(req.body));
   var newBlog = new models.Blog(req.body);
 
   newBlog.save((err)=>{

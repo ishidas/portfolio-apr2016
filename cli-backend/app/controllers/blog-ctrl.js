@@ -11,13 +11,10 @@ module.exports = function(app){
     $http.get(mainRoute + '/blog/articles')
       .then((res)=>{
         this.blogData = res.data;
-        console.log('res : ' + JSON.stringify(this.blogData));
-        console.log('res.data : ' + JSON.stringify(res.data));
       });
 
     //admin/blog
     this.postNewBlog = function(){
-      console.log('hitting ' + JSON.stringify(this.newPost))
       $http.post(mainRoute + '/admin/blog',this.newPost)
         .then((res)=>{
           console.log('res : ' + JSON.stringify(res));
