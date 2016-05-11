@@ -8,7 +8,7 @@
     <li>Follwoing: {{githubCtrl.repoData.following}}</li>
   </ul>
   <section>
-    <input ng-click="githubCtrl.getRepoLinks()" type="button" value="See ALl My Repo Links">
+    <input ng-click="githubCtrl.getRepoLinks()" type="button" value="See All My Repo Links">
     <div id="repeater" ng-repeat="repo in githubCtrl.repoLinks">
       <h3>Repo Name : {{repo.name}}</h3>
       <span>Link : <a ng-href="{{repo.url}}">{{repo.url}}</a></span>

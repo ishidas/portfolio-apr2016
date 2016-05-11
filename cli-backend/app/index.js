@@ -6,6 +6,7 @@ const app = angular.module('myApp',['ngRoute']);
 
 require(__dirname + '/directives/directives.js')(app);
 require(__dirname + '/controllers/github-ctrl.js')(app);
+require(__dirname + '/controllers/blog-ctrl.js')(app);
 
 //route providers
 app.config(['$routeProvider', function($routeProvider){
@@ -24,9 +25,14 @@ app.config(['$routeProvider', function($routeProvider){
       templateUrl: 'templates/about-view.html'
     })
     .when('/blog', {
-      templateUrl: 'templates/blog-view.html'
+      templateUrl: 'templates/blog-view.html',
+      controller: 'BlogController'
     })
     .when('/animations', {
       templateUrl: 'templates/animations-view.html'
+    })
+    .when('/admin/blog',{
+      templateUrl: 'templates/blog-admin.html',
+      controller: 'BlogController'
     });
 }]);

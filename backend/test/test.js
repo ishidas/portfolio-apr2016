@@ -8,6 +8,10 @@ chai.use(chaiHTTP);
 var request = chai.request;
 var expect = chai.expect;
 
+//*************************************************
+//run these test after changing the db to test db!!!
+//otherwise you will be doomed.
+//*************************************************
 describe('CRUD integration test', ()=>{
   var id;
   after((done)=>{

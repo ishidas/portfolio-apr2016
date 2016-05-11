@@ -21,7 +21,14 @@ module.exports = function(app){
     };
   });
 
-  
+  // app.directive('blogAdminView', function(){
+  //   return {
+  //     restrict: 'E',
+  //     templateUrl: 'templates/blog-admin.html'
+  //   };
+  // });
+
+
 
 
 
