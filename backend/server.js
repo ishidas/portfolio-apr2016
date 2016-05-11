@@ -5,9 +5,10 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 //db set up
-const PORT = process.env.MONGO_URI || 'mongodb://localhost/db';
-const test = 'mongodb://localhost/test';
-mongoose.connect(test);
+// const PORT = process.env.MONGO_PORT || 3000;
+const DB = process.env.MONGO_PORT || 'mongodb://localhost/db';
+// const test = 'mongodb://localhost/db';
+mongoose.connect(DB);
 let models = {};
 require(__dirname + '/models/blog-model.js')(mongoose, models);
 
@@ -36,10 +37,16 @@ app.get('/blog/articles/:id', (req, res)=>{
 });
 
 app.post('/admin/blog', (req, res)=>{
+  console.log('rea.body : ' + JSON.stringify(req.body))
   var newBlog = new models.Blog(req.body);
+
   newBlog.save((err)=>{
-    if(err) return res.json({error: err});
-    res.json({msg: 'Success!'});
+    if(err){
+      res.json({error: err});
+      return;
+    } else {
+      res.json({msg: 'Success!'});
+    }
   });
 });
 

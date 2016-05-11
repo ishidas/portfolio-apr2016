@@ -1,0 +1,7 @@
+<section ng-cloak data-ng-controller="BlogController as blog">
+  <article ng-repeat="list in blog.blogData">
+    <h2>{{list.title}}</h2>
+    <h4>{{list.auther}}</h4>
+    <p>{{list.body}}</p>
+  </article>
+</section>
