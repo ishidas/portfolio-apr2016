@@ -1,0 +1,18 @@
+$bright-green: rgb(0,255,0);
+$bright-pink: rgb(255,51,255);
+$bright-blue: rgb(0,0,255);
+$fade-blue: rgb(204,255,255);
+
+#animated-h2 {
+  animation-name: myname;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes myname {
+  0% {color: white;}
+  25% {color: $bright-pink}
+  50% {color: $fade-blue}
+  75% {color: $bright-green}
+  100% {color: $bright-blue}
+}

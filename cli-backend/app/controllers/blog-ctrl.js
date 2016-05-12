@@ -7,6 +7,7 @@ module.exports = function(app){
       auther: '',
       body: ''
     };
+
     //get all articles
     $http.get(mainRoute + '/blog/articles')
       .then((res)=>{
@@ -20,6 +21,7 @@ module.exports = function(app){
           console.log('res : ' + JSON.stringify(res));
         });
     };
+
 
   }]);//end of controller
 };//endo of module.exports

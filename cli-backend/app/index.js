@@ -7,9 +7,17 @@ const app = angular.module('myApp',['ngRoute']);
 require(__dirname + '/directives/directives.js')(app);
 require(__dirname + '/controllers/github-ctrl.js')(app);
 require(__dirname + '/controllers/blog-ctrl.js')(app);
+require(__dirname + '/controllers/about-ctrl.js')(app);
+
 
 //route providers
-app.config(['$routeProvider', function($routeProvider){
+app.config(['$routeProvider','$httpProvider', function($routeProvider, $httpProvider){
+  $httpProvider.defaults.useXDomain = true;
+  $httpProvider.defaults.withCredentials = true;
+  delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  $httpProvider.defaults.headers.common['Accept'] = 'application/json';
+  $httpProvider.defaults.headers.common['Content-Type'] = 'application/json';
+
   $routeProvider
     .when('/', {
       templateUrl: './templates/home.html'
@@ -35,4 +43,5 @@ app.config(['$routeProvider', function($routeProvider){
       templateUrl: 'templates/blog-admin.html',
       controller: 'BlogController'
     });
+
 }]);
