@@ -8,7 +8,7 @@ const webpack = require('webpack-stream');
 const sass = require('gulp-sass');
 const maps = require('gulp-sourcemaps');
 const minifyCSS = require('gulp-minify-css');
-// const urlAdjuster = require('gulp-css-url-adjuster');
+
 const source = {
   html: __dirname + '/app/**/*.html',
   js: __dirname + '/app/index.js',
@@ -16,12 +16,12 @@ const source = {
   directive: __dirname + '/app/*.js',
   sass: __dirname + '/app/**/*.scss',
   img: __dirname + '/app/**/*.png',
-  turner: __dirname + '/app/lib/*'
+  env: __dirname + '/app/env.js'
 };
 
-gulp.task('copy-turner', ()=>{
-  return gulp.src(source.turner)
-    .pipe(gulp.dest('./build/lib/'));
+gulp.task('copy-env', ()=>{
+  return gulp.src(source.env)
+    .pipe(gulp.dest('./build'));
 });
 
 gulp.task('sassy:dev', ()=>{
@@ -89,4 +89,4 @@ gulp.task('watcher', function(){
   gulp.watch( paths, ['bundle:dev','sassy:dev']);
 });
 
-gulp.task('default', ['copy-turner', 'copy', 'sassy:dev', 'bundle:dev','img']);
+gulp.task('default', ['copy-env', 'copy', 'sassy:dev', 'bundle:dev','img']);
