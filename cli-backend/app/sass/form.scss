@@ -16,9 +16,23 @@
   width: 40%;
 }
 
-#articles {
-  width: 100%;
+.blog-article-header {
+  padding: 0 10%;
+}
+
+.articles {
+  width: 80%;
   height: 5em;
+  margin: 0 10%;
+  text-align: justify;
   overflow: hidden;
   box-shadow: inset 3px -31px 41px -25px rgba(0,0,0,0.75);
+}
+
+.full-article-view {
+  width: 80%;
+  height: 100%;
+  padding: 0 10%;
+  text-align: justify;
+  box-shadow: none;
 }
