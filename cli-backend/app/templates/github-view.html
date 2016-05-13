@@ -1,14 +1,16 @@
 <section class="sec-container" ng-controller="GithubController as githubCtrl" ng-cloak>
-  <h3>Sawako Ishida Github Repo</h3>
-  <p>User Name : {{githuthubCtrl.repoData.login}}</p>
-  <img ng-src="{{githubCtrl.repoData.avatar_url}}" alt="Sawako's Github avatar image" />
-  <ul>
-    <li>Public Repos: {{githubCtrl.repoData.public_repos}}</li>
-    <li>Followers: {{githubCtrl.repoData.followers}}</li>
-    <li>Follwoing: {{githubCtrl.repoData.following}}</li>
-  </ul>
-  <section>
+  <section id="github-profile">
+    <h3>Sawako Ishida Github Repo</h3>
+    <img id="github-avatar" ng-src="{{githubCtrl.repoData.avatar_url}}" alt="Sawako's Github avatar image" />
+    <p>User Name : {{githubCtrl.repoData.name}}</p>
+    <ul>
+      <li>Public Repos: {{githubCtrl.repoData.public_repos}}</li>
+      <li>Followers: {{githubCtrl.repoData.followers}}</li>
+      <li>Follwoing: {{githubCtrl.repoData.following}}</li>
+    </ul>
     <input ng-click="githubCtrl.getRepoLinks()" type="button" value="See All My Repo Links">
+  </section>
+  <section>
     <div id="repeater" ng-repeat="repo in githubCtrl.repoLinks">
       <h3>Repo Name : {{repo.name}}</h3>
       <span>Link : <a ng-href="{{repo.url}}">{{repo.url}}</a></span>

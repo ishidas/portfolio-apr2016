@@ -16,10 +16,14 @@
   width: 40%;
 }
 
+.blog-article-header {
+  padding: 0 10%;
+}
+
 .articles {
   width: 80%;
   height: 5em;
-  padding: 0 10%;
+  margin: 0 10%;
   text-align: justify;
   overflow: hidden;
   box-shadow: inset 3px -31px 41px -25px rgba(0,0,0,0.75);
