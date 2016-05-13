@@ -2,7 +2,7 @@
   <article ng-repeat="list in blog.blogData">
     <h2>{{list.title}}</h2>
     <h4>{{list.auther}}</h4>
-    <p id="articles" >{{list.body}}</p>
-    <button type="button">Show All</button>
+    <p ng-class="blog.showFull ? 'full-article-view' : 'articles' ">{{list.body}}</p>
+    <button ng-click="blog.showFullArticle()" type="button">Show Full Article</button>
   </article>
 </section>

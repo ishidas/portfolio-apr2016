@@ -7,6 +7,7 @@ module.exports = function(app){
       auther: '',
       body: ''
     };
+    this.showFull = false;
 
     //get all articles
     $http.get(mainRoute + '/blog/articles')
@@ -22,6 +23,14 @@ module.exports = function(app){
         });
     };
 
+    this.showFullArticle = function(){
+      if(this.showFull === false){
+        console.log('hit ' + this.showFull)
+        this.showFull = true;
+      } else {
+        this.showFull = false;
+      }
+    };
 
   }]);//end of controller
 };//endo of module.exports
