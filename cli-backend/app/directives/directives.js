@@ -21,12 +21,12 @@ module.exports = function(app){
     };
   });
 
-  // app.directive('blogAdminView', function(){
-  //   return {
-  //     restrict: 'E',
-  //     templateUrl: 'templates/blog-admin.html'
-  //   };
-  // });
+  app.directive('shapesView', function(){
+    return {
+      restrict: 'E',
+      templateUrl: 'templates/shapes-background.html'
+    };
+  });
 
 
 
