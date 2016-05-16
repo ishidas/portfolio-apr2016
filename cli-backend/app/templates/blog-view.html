@@ -3,7 +3,7 @@
     <section class="blog-article-header">
       <h2>{{list.title}}</h2>
       <h4>{{list.auther}}</h4>
-      <button ng-click="blog.showFullArticle()" type="button">Show Full Article</button>
+      <button ng-click="blog.showFullArticle()" type="button">Show/Hide Full Article</button>
     </section>
     <p ng-class="blog.showFull ? 'full-article-view' : 'articles' ">{{list.body}}</p>
   </article>
