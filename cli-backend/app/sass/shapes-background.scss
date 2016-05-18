@@ -1,17 +1,11 @@
-// @mixin drop-slow-tiny {
-//   width: 1em;
-//   height: 1em;
-//   background-color: blue;
-//   margin: 0;
-//   border-radius: 0 50% 50% 50%;
-//   transform: rotate(45deg);
-// }
+$two-corners-color: rgba(58,190,255,1);
+$two-corners-color2: rgba(194,252,247,1);
 
 #corner-top-right {
   position: absolute;
   right: 0;
   top: 0;
-  background-color: rgba(252,221,242, 0.6);
+  background-color: $two-corners-color2;
   float: right;
   width: 54%;
   height: 20em;
@@ -23,7 +17,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  background-color: rgb(145,105,83);
+  background-color: $two-corners-color;
   float: left;
   width: 60%;
   height: 20em;
@@ -35,7 +29,7 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  background-color: rgb(252,181,181);
+  background-color: $two-corners-color2;
   float: left;
   width: 60%;
   height: 15.5em;
@@ -47,13 +41,10 @@
   position: fixed;
   right: 0;
   bottom: 0;
-  background-color: rgb(145,105,83);
+  background-color: $two-corners-color;
   float: right;
   width: 58%;
   height: 18em;
   -webkit-clip-path: polygon(100% 15%,100% 100%,20% 100%);
   z-index: -10;
 }
-// .rain-container div:nth-child(odd) {
-//   @include drop-slow-tiny;
-// }
