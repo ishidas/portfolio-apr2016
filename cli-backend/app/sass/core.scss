@@ -3,6 +3,7 @@
 @import 'logo-trunks';
 @import 'shapes-background';
 @import 'logo-img';
+@import 'about-me';
 
 $base-width: 100%;
 $base-height: 100%;
@@ -10,27 +11,19 @@ $base-padding: 5%;
 $base-margin: 30% 0;
 $shadow-color: transparentize(black, 0.5);
 $href-color: green;
-$border-color: #333333;
-$header-color: rgba(101, 82, 77, 0.70);
-$background-green-color: #163a3a;
-$background-darkblue-color: #051f2d;
-$block-background: rgba(255, 255, 255, 0.55);
-$block-background-creme: rgba(255, 233, 191, 0.75);
-$base-font-google: 'Bad Script', 'cursive';
-$base-font-google2: 'La BelleAurore', 'cursive';
+$button-color: rgb(186,218,85);
+$corner-top-left-color: rgb(58,190,255);
+// $base-font-google: 'Bad Script', 'cursive';
+// $base-font-google2: 'La BelleAurore', 'cursive';
 $base-font-google3: 'Quicksand', 'sans-serif';
-$base-font-google4: 'Niconne', 'cursive';
+$base-font-google4: 'Alegreya Sans', 'sans-serif';
 $base-font-size: 1.2em;
 $block-width: 9em;
 $block-height: 25%;
-$footer-color: rgb(128,123,135);
-$repeater-even-color: rgb(239,235,233);
-$new-background: rgb(239,235,233);
-$new-repeat: rgb(128,123,135);
 $break-small: 545px;
 html {
   width: 100%;
-  background-color: $new-background;
+  // background-color: $new-background;
 }
 
 body {
@@ -96,12 +89,12 @@ a:link {
 }
 
 a:active {
-  color: $bright-green;
+  // color: $bright-green;
   text-decoration: underline;
 }
 
 a:hover {
-  color: $bright-pink;
+  color: $button-color;
   text-decoration: none;
 }
 
@@ -134,7 +127,7 @@ a:hover {
 #repeater:nth-child(even) {
   width: 80%;
   padding: 0 10%;
-  background: $repeater-even-color;
+  // background: $repeater-even-color;
 }
 
 #repeater:nth-child(odd) {
@@ -157,7 +150,7 @@ span a {
 
 footer {
   width: 100%;
-  background-color: $footer-color;
+  // background-color: $footer-color;
   font-family: $base-font-google3;
 }
 

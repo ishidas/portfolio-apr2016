@@ -1,7 +1,6 @@
-$bright-green: rgb(0,255,0);
+$bright-green: rgb(12,116,137);
 $bright-pink: rgb(255,51,255);
-$bright-blue: rgb(0,0,255);
-$fade-blue: rgb(204,255,255);
+
 
 #animated-h2 {
   animation-name: myname;
@@ -11,8 +10,8 @@ $fade-blue: rgb(204,255,255);
 
 @keyframes myname {
   0% {color: $bright-pink}
-  25% {color: white}
+  25% {color: $bright-green}
   50% {color: $bright-pink}
-  75% {color: white}
+  75% {color: $bright-green}
   100% {color: $bright-pink}
 }
