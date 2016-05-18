@@ -13,6 +13,7 @@ module.exports = function(app){
     $http.get(mainRoute + '/blog/articles')
       .then((res)=>{
         this.blogData = res.data;
+        console.log(JSON.stringify(this.blogData));
       });
 
     //admin/blog
@@ -25,7 +26,7 @@ module.exports = function(app){
 
     this.showFullArticle = function(){
       if(this.showFull === false){
-        console.log('hit ' + this.showFull)
+        console.log('hit ' + this.showFull);
         this.showFull = true;
       } else {
         this.showFull = false;

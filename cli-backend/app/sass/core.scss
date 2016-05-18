@@ -2,6 +2,7 @@
 @import 'animations-home';
 @import 'logo-trunks';
 @import 'shapes-background';
+@import 'logo-img';
 
 $base-width: 100%;
 $base-height: 100%;
@@ -18,11 +19,12 @@ $block-background-creme: rgba(255, 233, 191, 0.75);
 $base-font-google: 'Bad Script', 'cursive';
 $base-font-google2: 'La BelleAurore', 'cursive';
 $base-font-google3: 'Quicksand', 'sans-serif';
+$base-font-google4: 'Niconne', 'cursive';
 $base-font-size: 1.2em;
 $block-width: 9em;
 $block-height: 25%;
 $footer-color: rgb(128,123,135);
-// $footer-color2: rgb(239,235,233);
+$repeater-even-color: rgb(239,235,233);
 $new-background: rgb(239,235,233);
 $new-repeat: rgb(128,123,135);
 $break-small: 545px;
@@ -42,14 +44,14 @@ header {
   position: fixed;
   display: inline-block;
   width: 100%;
-  // background-color: rgba(0,0,0, 0.5);
   color: white;
-  // z-index: 999;
 }
 
 header h2 {
   display: inline-block;
   padding: 2.5%;
+  font-family: $base-font-google4;
+  font-size: xx-large;
 }
 
 header span,  {
@@ -76,14 +78,9 @@ nav ul li {
   position: relative;
   display: inline-block;
   list-style: none;
-  width: 12em;
-  height: 12em;
-  // background-color: rgb(0,153,255);
-  // color: white;
-  margin: 5% 2.5%;
-  // border: 1em solid rgb(204,255,255);
-  // box-shadow: -10px -8px 22px 0px rgba(0,0,0,0.75);
-  // z-index: 10;
+  width: 10em;
+  height: 10em;
+  margin: 2.5%;
 }
 
 nav ul li a {
@@ -118,7 +115,8 @@ a:hover {
 
  body main {
   display: inline-block;
-  padding: 13em 0 2em 0;
+  padding: 9em 0 2em 0;
+  margin-top: 5%;
   width: 100%;
   z-index: -100;
 }
@@ -128,10 +126,15 @@ a:hover {
   width: 100%;
 }
 
+#repeater-sec {
+  background-color: rgba(255,255,255,0.6);
+  margin: 0 10%;
+}
+
 #repeater:nth-child(even) {
   width: 80%;
   padding: 0 10%;
-  background: $new-repeat;
+  background: $repeater-even-color;
 }
 
 #repeater:nth-child(odd) {
@@ -146,6 +149,7 @@ a:hover {
 #github-profile {
   padding: 0 10%;
 }
+
 
 span a {
   overflow-wrap: break-word;

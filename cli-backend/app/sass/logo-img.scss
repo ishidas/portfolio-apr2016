@@ -1,0 +1,26 @@
+
+.logo-outer-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // justify-content: center;
+}
+
+.logo-img-containers {
+  width: 21em;
+  background-color: rgba(255,255,255,0.6);
+}
+
+#ridesharetealogo {
+  width: 20.8em;
+}
+
+#tealogo {
+  position: relative;
+  left: 4em;
+}
+
+#shelseylogo {
+  position: relative;
+  left: 4em;
+}

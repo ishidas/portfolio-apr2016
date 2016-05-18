@@ -10,9 +10,9 @@ $fade-blue: rgb(204,255,255);
 }
 
 @keyframes myname {
-  0% {color: white;}
-  25% {color: $bright-pink}
-  50% {color: $fade-blue}
-  75% {color: $bright-green}
-  100% {color: $bright-blue}
+  0% {color: $bright-pink}
+  25% {color: white}
+  50% {color: $bright-pink}
+  75% {color: white}
+  100% {color: $bright-pink}
 }
