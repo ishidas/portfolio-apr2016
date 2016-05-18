@@ -2,6 +2,7 @@
 @import 'animations-home';
 @import 'logo-trunks';
 @import 'shapes-background';
+@import 'logo-img';
 
 $base-width: 100%;
 $base-height: 100%;
@@ -23,7 +24,7 @@ $base-font-size: 1.2em;
 $block-width: 9em;
 $block-height: 25%;
 $footer-color: rgb(128,123,135);
-// $footer-color2: rgb(239,235,233);
+$repeater-even-color: rgb(239,235,233);
 $new-background: rgb(239,235,233);
 $new-repeat: rgb(128,123,135);
 $break-small: 545px;
@@ -115,6 +116,7 @@ a:hover {
  body main {
   display: inline-block;
   padding: 9em 0 2em 0;
+  margin-top: 5%;
   width: 100%;
   z-index: -100;
 }
@@ -132,7 +134,7 @@ a:hover {
 #repeater:nth-child(even) {
   width: 80%;
   padding: 0 10%;
-  background: $new-repeat;
+  background: $repeater-even-color;
 }
 
 #repeater:nth-child(odd) {
@@ -147,6 +149,7 @@ a:hover {
 #github-profile {
   padding: 0 10%;
 }
+
 
 span a {
   overflow-wrap: break-word;
