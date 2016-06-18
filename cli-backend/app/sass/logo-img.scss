@@ -4,11 +4,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  background-image: url('./img/logo-background3.png');
 }
 
 .logo-img-containers {
   width: 21em;
   background-color: rgba(255,255,255,0.6);
+  padding: 10% 5%;
 }
 
 #ridesharetealogo {
