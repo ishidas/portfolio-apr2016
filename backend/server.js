@@ -8,9 +8,9 @@ const mongoose = require('mongoose');
 // const PORT = process.env.MONGO_PORT || 3000;
 // const DB = process.env.MONGO_URI || 'mongodb://localhost/db';
 // const test = 'mongodb://localhost/db';
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGOLAB_URI);
 mongoose.set('debug', true);
-console.log(process.env.MONGO_URI);
+console.log(process.env.MONGOLAB_URI);
 let models = {};
 require(__dirname + '/models/blog-model.js')(mongoose, models);
 

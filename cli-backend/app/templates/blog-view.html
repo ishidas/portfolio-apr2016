@@ -1,10 +1,10 @@
 <section ng-cloak data-ng-controller="BlogController as blog">
-  <article ng-repeat="list in blog.blogData">
+  <article ng-repeat="list in blog.blogData track by $index">
     <section class="blog-article-header">
       <h2>{{list.title}}</h2>
       <h4>{{list.auther}}</h4>
-      <button ng-click="blog.showFullArticle()" type="button">Show/Hide Full Article</button>
+      <button ng-click="blog.toggleArticle(list)" type="button">Show/Hide Full Article</button>
     </section>
-    <p ng-class="blog.showFull ? 'full-article-view' : 'articles' ">{{list.body}}</p>
+    <p ng-class="blog.activeList == list ? 'full-article-view' : 'articles' ">{{ list.body }}</p>
   </article>
 </section>

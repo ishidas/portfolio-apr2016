@@ -8,7 +8,7 @@ module.exports = function(app){
       body: ''
     };
     this.showFull = false;
-
+    this.activeList;
     //get all articles
     $http.get(mainRoute + '/blog/articles')
       .then((res)=>{
@@ -24,14 +24,10 @@ module.exports = function(app){
         });
     };
 
-    this.showFullArticle = function(){
-      if(this.showFull === false){
-        console.log('hit ' + this.showFull);
-        this.showFull = true;
-      } else {
-        this.showFull = false;
-      }
+    this.toggleArticle = function(list){
+      this.activeList = list;
     };
+
 
   }]);//end of controller
 };//endo of module.exports
