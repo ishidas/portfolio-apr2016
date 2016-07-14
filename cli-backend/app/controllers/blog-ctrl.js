@@ -9,6 +9,8 @@ module.exports = function(app){
     };
     this.showFull = false;
     this.activeList;
+    this.activeId;
+
     //get all articles
     $http.get(mainRoute + '/blog/articles')
       .then((res)=>{
@@ -24,8 +26,12 @@ module.exports = function(app){
         });
     };
 
-    this.toggleArticle = function(list){
+    this.toggleArticle = function(list, id){
       this.activeList = list;
+      this.activeId = id;
+      if(!this.showFull) this.showFull = true;
+      if(this.showFull) this.showFull = false;
+      // console.log('is????', id)
     };
 
 
