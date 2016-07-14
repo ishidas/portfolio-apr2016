@@ -8,6 +8,8 @@ module.exports = function(app){
       body: ''
     };
     this.showFull = false;
+    this.activeList;
+    this.activeId;
 
     //get all articles
     $http.get(mainRoute + '/blog/articles')
@@ -24,14 +26,14 @@ module.exports = function(app){
         });
     };
 
-    this.showFullArticle = function(){
-      if(this.showFull === false){
-        console.log('hit ' + this.showFull);
-        this.showFull = true;
-      } else {
-        this.showFull = false;
-      }
+    this.toggleArticle = function(list, id){
+      this.activeList = list;
+      this.activeId = id;
+      if(!this.showFull) this.showFull = true;
+      if(this.showFull) this.showFull = false;
+      // console.log('is????', id)
     };
+
 
   }]);//end of controller
 };//endo of module.exports
