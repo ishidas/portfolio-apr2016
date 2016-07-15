@@ -2,7 +2,7 @@
 module.exports = function(app){
   app.controller('logoController',['$document','$window', function($document, $window){
 
-    console.log('ELEMENT????', $document.getElementsByClass('sticky-section'));
+    // console.log('ELEMENT????', $document.('sticky-section'));
 
     // };
 
