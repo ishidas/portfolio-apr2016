@@ -29,8 +29,16 @@ $button-color: rgb(186,218,85);
   height: 100%;
 }
 
+.blog-fonts {
+  font-family: 'Noto Serif', serif;
+}
+
 .blog-article-header {
   padding: 0 10%;
+}
+
+.articles-container {
+  border: 1px solid #d6eef0;
 }
 
 .articles {
@@ -52,16 +60,4 @@ $button-color: rgb(186,218,85);
   text-align: justify;
   box-shadow: none;
   background-color: $background-color-articles;
-}
-
-button, #github-button {
-  padding: 1%;
-  font-family: Quicksand;
-  font-size: medium;
-  background-color: $button-color;
-  border-radius: 2%;
-  box-shadow: 1px 1px 1px 1px #888888;
-  color: white;
-  font-weight: bold;
-  border: none;
 }
