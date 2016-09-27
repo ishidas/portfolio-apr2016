@@ -8,7 +8,6 @@ require(__dirname + '/directives/directives.js')(app);
 require(__dirname + '/controllers/github-ctrl.js')(app);
 require(__dirname + '/controllers/blog-ctrl.js')(app);
 require(__dirname + '/controllers/about-ctrl.js')(app);
-require(__dirname + '/controllers/logo-ctrl.js')(app);
 
 
 //route providers
@@ -31,9 +30,6 @@ app.config(['$routeProvider', function($routeProvider){
     .when('/blog', {
       templateUrl: 'templates/blog-view.html',
       controller: 'BlogController'
-    })
-    .when('/animations', {
-      templateUrl: 'templates/animations-view.html'
     })
     .when('/admin/blog',{
       templateUrl: 'templates/blog-admin.html',

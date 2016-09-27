@@ -1,20 +1,32 @@
-<section class="sec-container" ng-controller="GithubController as githubCtrl" ng-cloak>
-  <section id="github-profile">
-    <h3>Sawako Ishida Github Repo</h3>
-    <img id="github-avatar" ng-src="{{githubCtrl.repoData.avatar_url}}" alt="Sawako's Github avatar image" />
-    <p>User Name : {{githubCtrl.repoData.name}}</p>
-    <ul>
-      <li>Public Repos: {{githubCtrl.repoData.public_repos}}</li>
-      <li>Followers: {{githubCtrl.repoData.followers}}</li>
-      <li>Follwoing: {{githubCtrl.repoData.following}}</li>
-    </ul>
-    <input id="github-button" ng-click="githubCtrl.getRepoLinks()" type="button" value="See All My Repo Links">
+<section class="container-fluid" ng-controller="GithubController as githubCtrl" ng-cloak>
+  <section id="github-profile" class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <h3 class="blog-fonts">Sawako Ishida Github Repo</h3>
+        <img id="github_avatar" ng-src="{{githubCtrl.repoData.avatar_url}}" alt="Sawako's Github avatar image" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <!-- <p>User Name : {{githubCtrl.repoData.name}}</p> -->
+        <ul>
+          <li>Public Repos: {{githubCtrl.repoData.public_repos}}</li>
+          <li>Followers: {{githubCtrl.repoData.followers}}</li>
+          <li>Follwoing: {{githubCtrl.repoData.following}}</li>
+        </ul>
+        <button id="github-button" ng-click="githubCtrl.getRepoLinks()" type="button" class="btn btn-info">Display Repos</button>
+      </div>
+    </div>
   </section>
-  <section id="repeater-sec">
-    <div id="repeater" ng-repeat="repo in githubCtrl.repoLinks">
-      <h3>Repo Name : {{repo.name}}</h3>
-      <span>Link : <a ng-href="{{repo.url}}">{{repo.url}}</a></span>
-      <p>Created at : {{repo.created_at}}</p>
+  <section class="container-fluid" id="repeater-sec">
+    <div class="row" id="repeater" ng-repeat="repo in githubCtrl.repoLinks">
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <h3 class="blog-fonts">Repo Name : {{repo.name}}</h3>
+          <span>Link : <a ng-href="{{repo.url}}">{{repo.url}}</a></span>
+          <p>Created at : {{repo.created_at}}</p>
+        </div>
+      </div>
     </div>
   </section>
 </section>

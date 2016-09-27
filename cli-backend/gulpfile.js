@@ -8,6 +8,7 @@ const webpack = require('webpack-stream');
 const sass = require('gulp-sass');
 const maps = require('gulp-sourcemaps');
 const minifyCSS = require('gulp-minify-css');
+const clean = require('gulp-clean');
 
 const source = {
   html: __dirname + '/app/**/*.html',
@@ -16,7 +17,8 @@ const source = {
   directive: __dirname + '/app/*.js',
   sass: __dirname + '/app/**/*.scss',
   img: __dirname + '/app/**/*.png',
-  env: __dirname + '/app/env.js'
+  env: __dirname + '/app/env.js',
+  bootstrap: __dirname + '/app/**/**/**/'
 };
 
 gulp.task('copy-env', ()=>{
@@ -39,7 +41,7 @@ gulp.task('img', ()=>{
 });
 
 gulp.task('copy', ()=>{
-  return gulp.src([source.html,source.img])
+  return gulp.src([source.html,source.img, source.bootstrap])
     .pipe(gulp.dest('./build'));
 });
 
@@ -87,6 +89,11 @@ gulp.task('test', function(){
 
 gulp.task('watcher', function(){
   gulp.watch( paths, ['bundle:dev','sassy:dev']);
+});
+
+gulp.task('clean', function(){
+  return gulp.src('build', {read: 'clean'})
+  .pipe(clean());
 });
 
 gulp.task('default', ['copy-env', 'copy', 'sassy:dev', 'bundle:dev','img']);
